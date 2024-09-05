@@ -76,11 +76,11 @@ class Readmail:
 
 
 
-  def download(self,query="ALL",dir_name="mails",inbox="inbox"):
+  def download(self,query="ALL",dir_name="mails",inbox="inbox",num_mails=5):
     if self.status:
        self.mail_server.select(inbox)
        status,messages= self.mail_server.search(None,query)
-       self.mail_ids= messages[0].split()[-3:]
+       self.mail_ids= messages[0].split()[-num_mails:]
        utils.check_dir(dir_name)
        for mail_id in self.mail_ids:
            status, data = self.mail_server.fetch(mail_id, '(RFC822)')
