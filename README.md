@@ -20,3 +20,8 @@ m.send(receiver,subject,body)
 ```
 
 
+Added
+=====
+:laugh
+
+* Readmail module
